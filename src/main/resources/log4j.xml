@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC
+  "-//APACHE//DTD LOG4J 1.2//EN" "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">
+
+<log4j:configuration>
+
+	<appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+		<!-- Target param determines which console stream to print messages to, System.out or System.err. -->
+
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d[%p,%c{1}] %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="logfile" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="${spring_with_webapplicationinitializer.root}/logs/spring-with-webapplicationinitializer.log" />
+		<param name="MaxFileSize" value="10MB" />
+		<param name="MaxBackupIndex" value="10" />
+
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{ABSOLUTE} %5p %c{1},%t:%L - %m%n" />
+		</layout>
+	</appender>
+
+	<logger name="org.springframework" additivity="true">
+		<level value="info" />
+		<appender-ref ref="logfile" />
+	</logger>
+
+	<root>
+        <priority value="debug" />
+<!-- 		<priority value="warn" /> -->
+		<appender-ref ref="stdout" />
+	</root>
+
+</log4j:configuration>
