@@ -32,3 +32,8 @@ Servers/
 .idea/
 *.iml
 
+
+#####
+# Others
+#####
+logs/
