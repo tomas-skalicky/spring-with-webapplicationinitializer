@@ -13,7 +13,7 @@
 	</appender>
 
 	<appender name="logfile" class="org.apache.log4j.RollingFileAppender">
-        <param name="File" value="${spring_with_webapplicationinitializer.root}/logs/spring-with-webapplicationinitializer.log" />
+        <param name="File" value="${spring_with_webapplicationinitializer.root}/../../logs/spring-with-webapplicationinitializer.log" />
 		<param name="MaxFileSize" value="10MB" />
 		<param name="MaxBackupIndex" value="10" />
 
@@ -22,14 +22,20 @@
 		</layout>
 	</appender>
 
-	<logger name="org.springframework" additivity="true">
+	<logger name="cz.skalicky.hello" additivity="false">
+		<level value="debug" />
+		<appender-ref ref="stdout" />
+		<appender-ref ref="logfile" />
+	</logger>
+
+	<logger name="org.springframework" additivity="false">
 		<level value="info" />
+		<appender-ref ref="stdout" />
 		<appender-ref ref="logfile" />
 	</logger>
 
 	<root>
-        <priority value="debug" />
-<!-- 		<priority value="warn" /> -->
+        <priority value="warn" />
 		<appender-ref ref="stdout" />
 	</root>
 
