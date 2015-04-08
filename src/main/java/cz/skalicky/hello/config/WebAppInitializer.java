@@ -17,6 +17,8 @@ public class WebAppInitializer implements WebApplicationInitializer {
         AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
         rootContext.register(AppConfig.class);
 
+        servletContext.setInitParameter("log4jConfigLocation", "classpath:log4j-hello.xml");
+
         servletContext.addListener(new Log4jConfigListener());
 
         servletContext.addListener(new ContextLoaderListener(rootContext));
