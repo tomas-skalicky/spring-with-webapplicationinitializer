@@ -2,10 +2,10 @@
 # expected result:
 # Hello World
 ###
-curl -v -H "Accept: application/json" -X GET http://localhost:9090/spring-hello/world/
+curl -v --header "Accept: application/json" -X GET http://localhost:9090/spring-hello/world/
 
 ###
 # expected result:
-# Hello Tom
+# Good morning Tom
 ###
-curl -v -H "Accept: application/json" -X GET http://localhost:9090/spring-hello/tom/
+curl -v --header "Accept: application/json" -X GET http://localhost:9090/spring-hello/tom/
