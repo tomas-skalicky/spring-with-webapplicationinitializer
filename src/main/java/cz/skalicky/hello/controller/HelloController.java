@@ -1,9 +1,10 @@
 package cz.skalicky.hello.controller;
 
 import org.springframework.http.MediaType;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @author Tomas Skalicky
@@ -12,18 +13,20 @@ import org.springframework.web.bind.annotation.RestController;
  *         <p>
  *         Copyright (c) 2014, Check24 Vergleichsportal GmbH
  */
-@RestController
+@Controller
 @RequestMapping("")
 public class HelloController {
 
     @RequestMapping(value = "/world/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
     public String helloWorld() {
         return "Hello World";
     }
 
     @RequestMapping(value = "/tom/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public String helloTom() {
-        return "Hello Tom";
+    @ResponseBody
+    public String goodMorningTom() {
+        return "Good morning Tom";
     }
 
 }
