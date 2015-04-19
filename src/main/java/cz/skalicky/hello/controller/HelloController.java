@@ -16,13 +16,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("")
 public class HelloController {
 
-	@RequestMapping(value = "/world/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public String helloWorld() {
-		return "Hello World";
-	}
+    @RequestMapping(value = "/world/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public String helloWorld() {
+        return "Hello World";
+    }
 
-	@RequestMapping(value = "/tom/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public String helloTom() {
-		return "Hello Tom";
-	}
+    @RequestMapping(value = "/tom/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public String helloTom() {
+        return "Hello Tom";
+    }
+
 }

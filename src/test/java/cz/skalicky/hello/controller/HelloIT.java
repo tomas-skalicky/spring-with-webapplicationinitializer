@@ -29,41 +29,35 @@ import cz.skalicky.hello.config.ComponentScanConfig;
 @WebAppConfiguration
 public class HelloIT extends AbstractTestNGSpringContextTests {
 
-	@Inject
-	private WebApplicationContext wac;
+    @Inject
+    private WebApplicationContext wac;
 
-	private MockMvc mockMvc;
+    private MockMvc mockMvc;
 
-	@BeforeMethod
-	public void initMockMvc() {
+    @BeforeMethod
+    public void initMockMvc() {
 
-		mockMvc = webAppContextSetup(wac).build();
-	}
+        mockMvc = webAppContextSetup(wac).build();
+    }
 
-	@Test
-	public void shouldReturnHelloWorld() throws Exception {
+    @Test
+    public void shouldReturnHelloWorld() throws Exception {
 
-		// @formatter:off
-		mockMvc.perform(
-				get("/world/")
-						.accept(MediaType.APPLICATION_JSON))
-				.andDo(print())
-				.andExpect(status().is2xxSuccessful());
-				//.andExpect(jsonPath("$").value("Hello World"));
-		// @formatter:on
-	}
+        // @formatter:off
+        mockMvc.perform(get("/world/").accept(MediaType.APPLICATION_JSON)).andDo(print())
+                .andExpect(status().is2xxSuccessful());
+        // .andExpect(jsonPath("$").value("Hello World"));
+        // @formatter:on
+    }
 
-	@Test
-	public void shouldReturnHelloTom() throws Exception {
+    @Test
+    public void shouldReturnHelloTom() throws Exception {
 
-		// @formatter:off
-		mockMvc.perform(
-				get("/tom/")
-						.accept(MediaType.APPLICATION_JSON))
-				.andDo(print())
-				.andExpect(status().is2xxSuccessful());
-				//.andExpect(jsonPath("$").value("Hello World"));
-		// @formatter:on
-	}
+        // @formatter:off
+        mockMvc.perform(get("/tom/").accept(MediaType.APPLICATION_JSON)).andDo(print())
+                .andExpect(status().is2xxSuccessful());
+        // .andExpect(jsonPath("$").value("Hello World"));
+        // @formatter:on
+    }
+
 }
-

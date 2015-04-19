@@ -9,6 +9,7 @@ package cz.skalicky.hello.controller;
  */
 public final class PackageMarker {
 
-	private PackageMarker() {
-	}
+    private PackageMarker() {
+    }
+
 }
