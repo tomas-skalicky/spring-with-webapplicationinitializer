@@ -95,7 +95,7 @@ task wrapper(type: Wrapper) {
 	// The distribution will be unpacked to the $USER_HOME/.gradle/gradle/dists
 	archiveBase = Wrapper.PathBase.GRADLE_USER_HOME
 	archivePath = 'gradle/dists'
-	distributionUrl = 'https://services.gradle.org/distributions/gradle-2.3-all.zip'
+	distributionUrl = 'https://services.gradle.org/distributions/gradle-2.10-all.zip'
 }
 
 
